@@ -1,3 +1,6 @@
+// this mocks a number of API calls
+// returns promises to emulate async HTTP requests
+
 import { messages, users } from './data'
 
 export const getUsers = () => {

@@ -1,3 +1,5 @@
+// provides data for the mock API and testing
+
 import _ from 'lodash'
 import faker from 'faker'
 
