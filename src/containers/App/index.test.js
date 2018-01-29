@@ -24,4 +24,19 @@ describe('App', () => {
   test('it renders a <MessageFormContainer />', () => {
     expect(mountedApp.find('MessageFormContainer')).toHaveLength(1)
   })
+
+  describe('#toggleDrawer', () => {
+    test('toggles the drawer input checked/unchecked', () => {
+      const toggle = mountedApp.find('.app__drawer-open')
+      toggle.simulate('click')
+
+      expect(mountedApp.find('input[type="checkbox"]').props().checked)
+        .toBe(true)
+
+      toggle.simulate('click')
+
+      expect(mountedApp.find('input[type="checkbox"]').props().checked)
+        .toBe(false)
+    })
+  })
 })
