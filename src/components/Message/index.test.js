@@ -23,4 +23,9 @@ describe('Message', () => {
   test("it renders the message's sentAt date", () => {
     expect(text).toMatch(prettyDate(message.sentAt))
   })
+
+  test('it renders the avatar', () => {
+    const image = wrapper.find('img')
+    expect(image.prop('src')).toEqual(message.user.avatarUrl)
+  })
 })

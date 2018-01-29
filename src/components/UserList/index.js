@@ -7,15 +7,15 @@ const UserList = props =>
   <ul>
     {props.users.map(user => {
       return (
-         <li
-           key={`user-${user.userName}`}
-           className='user-list__item'
-         >
-           {user.userName}
-         </li>
-       )
-     })}
-   </ul>
+        <li
+          key={`user-${user.userName}`}
+          className='user-list__item'
+        >
+          {user.userName}
+        </li>
+      )
+    })}
+  </ul>
 
 UserList.propTypes = {
   users: PropTypes.array

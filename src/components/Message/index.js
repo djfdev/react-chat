@@ -6,7 +6,13 @@ import './index.css'
 
 const Message = props =>
   <div className='message'>
-    <div className='message__avatar-wrapper' />
+    <div className='message__avatar-wrapper'>
+      <img
+        src={props.user.avatarUrl}
+        alt={props.user.userName}
+        className='message__avatar'
+      />
+    </div>
     <div className='message__bubble'>
       <div className='message__bubble-arrow' />
       <div className='message__body'>{props.body}</div>
@@ -18,7 +24,10 @@ const Message = props =>
   </div>
 
 Message.propTypes = {
-  user: PropTypes.shape({ userName: PropTypes.string }).isRequired,
+  user: PropTypes.shape({
+    userName: PropTypes.string,
+    avatarUrl: PropTypes.string
+  }).isRequired,
   body: PropTypes.string.isRequired,
   sentAt: PropTypes.instanceOf(Date)
 }

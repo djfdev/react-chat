@@ -9,6 +9,11 @@
   width: 4rem;
 }
 
+.message__avatar {
+  border-radius: 100%;
+  width: 100%;
+}
+
 .message__bubble {
   background: white;
   border-radius: 3px;
