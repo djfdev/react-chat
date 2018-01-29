@@ -50,4 +50,41 @@ describe('actions', () => {
       }
     })
   })
+
+  describe('updateCurrentMessage', () => {
+    test("returns action with the current input's value", async () => {
+      const body = 'hello world'
+
+      const expectedAction = {
+        type: types.UPDATE_CURRENT_MESSAGE,
+        payload: { body: 'hello world' }
+      }
+
+      expect(actions.updateCurrentMessage(body)).toEqual(expectedAction)
+    })
+  })
+
+  describe('createMessage', () => {
+    test('dispatches an action with the new message', async () => {
+      const message = {
+        user: users[0],
+        body: 'spam',
+        sentAt: new Date()
+      }
+
+      const expectedAction = {
+        type: types.CREATE_MESSAGE,
+        payload: { message }
+      }
+
+      api.createMessage = jest.fn().mockReturnValue(message)
+
+      try {
+        await store.dispatch(actions.createMessage())
+        expect(store.getActions()).toEqual([expectedAction])
+      } catch (error) {
+        throw error
+      }
+    })
+  })
 })

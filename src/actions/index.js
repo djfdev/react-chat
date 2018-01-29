@@ -14,3 +14,14 @@ export const getMessages = () => {
     dispatch({ type: types.GET_MESSAGES, payload: { messages } })
   }
 }
+
+export const updateCurrentMessage = body => {
+  return { type: types.UPDATE_CURRENT_MESSAGE, payload: { body } }
+}
+
+export const createMessage = newMessage => {
+  return async dispatch => {
+    const message = await api.createMessage(newMessage)
+    dispatch({ type: types.CREATE_MESSAGE, payload: { message } })
+  }
+}

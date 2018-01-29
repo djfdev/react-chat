@@ -15,3 +15,11 @@ export const getMessages = () => {
     }, 200)
   })
 }
+
+export const createMessage = message => {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve(message)
+    }, 200)
+  })
+}

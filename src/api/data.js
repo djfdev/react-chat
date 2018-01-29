@@ -23,3 +23,7 @@ export const messages = [
     sentAt: new Date()
   }
 ]
+
+export const currentUser = {
+  userName: 'daniel'
+}

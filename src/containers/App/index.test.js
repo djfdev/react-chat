@@ -20,4 +20,8 @@ describe('App', () => {
   test('it renders a <MessageListContainer />', () => {
     expect(mountedApp.find('MessageListContainer')).toHaveLength(1)
   })
+
+  test('it renders a <MessageFormContainer />', () => {
+    expect(mountedApp.find('MessageFormContainer')).toHaveLength(1)
+  })
 })
