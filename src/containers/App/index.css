@@ -1,0 +1,38 @@
+.app {
+  height: 100vh;
+  display: flex;
+}
+
+.app__sidebar {
+  padding: 2rem;
+  background: white;
+  flex: 0 0 10rem;
+  height: 100%;
+}
+
+.app__sidebar-title {
+  font-weight: bold;
+  text-transform: uppercase;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #444444;
+}
+
+.app__main {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 5rem 0 2rem 2rem;
+  background-color: rgba(204,153,153, 0.3);
+}
+
+.app__content {
+  flex: 1;
+  overflow: scroll;
+}
+
+.app__footer {
+  margin-top: 2rem;
+  padding-right: 2rem;
+}

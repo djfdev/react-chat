@@ -1,6 +1,7 @@
 /* globals describe, test, expect */
 import React from 'react'
 import { shallow } from 'enzyme'
+import prettyDate from 'date-fns/distance_in_words_to_now'
 
 import Message from './'
 
@@ -20,6 +21,6 @@ describe('Message', () => {
   })
 
   test("it renders the message's sentAt date", () => {
-    expect(text).toMatch(message.sentAt.toString())
+    expect(text).toMatch(prettyDate(message.sentAt))
   })
 })

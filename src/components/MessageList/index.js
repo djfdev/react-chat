@@ -1,13 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import './index.css'
+
 import Message from '../Message'
 
 const MessageList = props =>
-  <ul>
+  <ul className='message-list'>
     {props.messages.map(message => {
       return (
-        <li key={`message-${message.id}`}>
+        <li className='message-list__item' key={`message-${message.id}`}>
           <Message {...message} />
         </li>
       )

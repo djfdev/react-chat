@@ -1,0 +1,25 @@
+.message-form {
+  display: flex;
+}
+
+.message-form__input {
+  flex: 1;
+  padding: 0.5rem;
+  border: none;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.message-form__submit {
+  border: none;
+  background: #7645a3;
+  color: white;
+  cursor: pointer;
+  transition: all 0.1s ease-in;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.message-form__submit:hover {
+  opacity: 0.8;
+}

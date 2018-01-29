@@ -1,15 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import './index.css'
+
 const MessageForm = props =>
-  <form onSubmit={props.handleSubmit}>
+  <form className='message-form' onSubmit={props.handleSubmit}>
     <input
+      className='message-form__input'
       value={props.value}
       placeholder='Say something ...'
       aria-label='New Message'
       onChange={props.handleChange}
     />
-    <button type='submit'>Send</button>
+    <button className='message-form__submit' type='submit'>Send</button>
   </form>
 
 MessageForm.propTypes = {
