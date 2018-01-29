@@ -7,11 +7,17 @@ import App from './'
 describe('App', () => {
   const mountedApp = mount(<App />)
 
-  test('it renders a <Provider />', () => {
+  test('it renders a <Provider /> with a single child', () => {
+    const provider = mountedApp.find('Provider')
     expect(mountedApp.find('Provider')).toHaveLength(1)
+    expect(provider.children()).toHaveLength(1)
   })
 
   test('it renders a <UserListContainer />', () => {
     expect(mountedApp.find('UserListContainer')).toHaveLength(1)
+  })
+
+  test('it renders a <MessageListContainer />', () => {
+    expect(mountedApp.find('MessageListContainer')).toHaveLength(1)
   })
 })

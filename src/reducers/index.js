@@ -6,6 +6,10 @@ const reducer = (state = {}, action) => {
       return Object.assign({}, state, {
         users: action.payload.users
       })
+    case types.GET_MESSAGES:
+      return Object.assign({}, state, {
+        messages: action.payload.messages
+      })
     default:
       return state
   }

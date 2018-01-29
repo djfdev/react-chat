@@ -7,3 +7,10 @@ export const getUsers = () => {
     dispatch({ type: types.GET_USERS, payload: { users } })
   }
 }
+
+export const getMessages = () => {
+  return async dispatch => {
+    const messages = await api.getMessages()
+    dispatch({ type: types.GET_MESSAGES, payload: { messages } })
+  }
+}
