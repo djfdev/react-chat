@@ -1,5 +1,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const UglifyJSWebpackPlugin = require('uglifyjs-webpack-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   template: './src/index.html',
@@ -7,7 +9,9 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   inject: 'body'
 })
 
-module.exports = {
+const ExtractTextPluginConfig = new ExtractTextPlugin('styles.css')
+
+const config = {
   entry: './src/index.js',
   output: {
     filename: 'bundle.js',
@@ -22,12 +26,24 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader']
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: 'css-loader'
+        })
       }
     ]
   },
   devtool: process.env.NODE_ENV === 'production'
     ? 'source-map'
     : 'eval-source-map',
-  plugins: [HtmlWebpackPluginConfig]
+  plugins: [HtmlWebpackPluginConfig, ExtractTextPluginConfig]
 }
+
+if (process.env.NODE_ENV === 'production') {
+  config.devtool = 'source-map'
+  config.plugins.push(new UglifyJSWebpackPlugin())
+} else {
+  config.devtool = 'eval-source-map'
+}
+
+module.exports = config
