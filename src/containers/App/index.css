@@ -4,10 +4,7 @@
 }
 
 .app__sidebar {
-  padding: 2rem;
-  background: white;
-  flex: 0 0 15rem;
-  height: 100%;
+  display: none;
 }
 
 .app__sidebar-title {
@@ -23,7 +20,7 @@
   flex: 1;
   flex-direction: column;
   justify-content: space-between;
-  padding: 5rem 0 2rem 2rem;
+  padding: 2rem;
   background-color: rgba(204,153,153, 0.3);
 }
 
@@ -34,5 +31,14 @@
 
 .app__footer {
   margin-top: 2rem;
-  padding-right: 2rem;
+}
+
+@media (min-width: 768px) {
+  .app__sidebar {
+    padding: 2rem;
+    background: white;
+    flex: 0 0 15rem;
+    height: 100%;
+    display: block;
+  }
 }
